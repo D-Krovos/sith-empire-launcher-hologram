@@ -10,7 +10,7 @@
     @font-face { font-family: Cinzel; src: url("assets/cinzel.ttf") format("truetype"); font-display: swap; }
     :root { color-scheme: dark; font-family: Arial, sans-serif; color: #f6f0f2; background: #020204; --red: #ee263f; --ice: #78dfff; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 50% 8%, #291015 0, #090608 38rem, #020204 76rem); }
+    body { margin: 0; min-width: 320px; background: #000; }
     a { color: inherit; }
     a:focus-visible { outline: 3px solid #8be6ff; outline-offset: 4px; }
     .page { width: min(1040px, calc(100% - 32px)); margin: 0 auto; }
@@ -25,10 +25,10 @@
     .eyebrow { margin: 0 0 12px; color: #ff6479; font-size: 10px; letter-spacing: 3px; text-align: center; text-transform: uppercase; }
     h1 { margin: 0; font: 500 clamp(34px, 7vw, 58px) Cinzel, Georgia, serif; letter-spacing: 1.2px; text-align: center; text-shadow: 0 0 26px #e9263d44; }
     .subtitle { max-width: 620px; margin: 13px auto 25px; color: #c7b9bd; font-size: 15px; line-height: 1.7; text-align: center; }
-    .holo-stage { position: relative; isolation: isolate; display: grid; min-height: 330px; place-items: center; overflow: hidden; border: 1px solid #9622346e; border-radius: 5px; background: radial-gradient(ellipse at center, #171014 0, #070608 54%, #030304 100%); box-shadow: 0 20px 70px #000, inset 0 0 60px #e32a3b10; }
+    .holo-stage { position: relative; isolation: isolate; display: grid; min-height: 330px; place-items: center; overflow: hidden; border: 1px solid #9622346e; border-radius: 5px; background: #000; box-shadow: 0 20px 70px #000; }
     .holo-stage::before { position: absolute; z-index: 1; inset: 0; pointer-events: none; content: ""; opacity: .42; background: repeating-linear-gradient(0deg, transparent 0 3px, #b52b3916 4px, transparent 5px 8px); }
     .holo-stage::after { position: absolute; z-index: 1; inset: 0; pointer-events: none; content: ""; background: linear-gradient(110deg, transparent 17%, #fb304508 49%, #73e4ff0a 53%, transparent 82%); }
-    .holo-emblem { position: absolute; z-index: 0; width: min(74vw, 600px); height: auto; opacity: .38; mix-blend-mode: screen; filter: drop-shadow(0 0 12px #f12645) drop-shadow(0 0 42px #df1d4380) drop-shadow(0 0 70px #43cfff30); animation: holo-spin 14s linear infinite; }
+    .holo-emblem { position: absolute; z-index: 0; width: min(74vw, 600px); height: auto; opacity: .52; mix-blend-mode: screen; filter: none; animation: holo-spin 14s linear infinite; }
     @keyframes holo-spin {
       0% { transform: perspective(900px) rotateY(0deg) rotateZ(-4deg) scale(.86); opacity: .24; }
       25% { opacity: .43; }
