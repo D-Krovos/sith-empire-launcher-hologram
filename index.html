@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020204">
+  <meta name="description" content="Download The Sith Empire Launcher for Jedi Academy. Manage JoF content, Sith Cloud files, and your game clients.">
+  <title>{{S}} Launcher — Sith Empire</title>
+  <style>
+    @font-face { font-family: Cinzel; src: url("assets/cinzel.ttf") format("truetype"); font-display: swap; }
+    :root { color-scheme: dark; font-family: Arial, sans-serif; color: #f6f0f2; background: #020204; --red: #ee263f; --ice: #78dfff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 50% 8%, #291015 0, #090608 38rem, #020204 76rem); }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid #8be6ff; outline-offset: 4px; }
+    .page { width: min(1040px, calc(100% - 32px)); margin: 0 auto; }
+    header { height: 78px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #d834493b; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 42px; height: 42px; object-fit: contain; filter: drop-shadow(0 0 8px #ef243f88); }
+    .brand span { font: 16px Cinzel, Georgia, serif; letter-spacing: 1.5px; }
+    .brand small { display: block; margin-top: 4px; color: #a99198; font: 9px Arial, sans-serif; letter-spacing: 2.4px; text-align: center; }
+    nav { display: flex; gap: 24px; color: #cbbcc0; font-size: 12px; }
+    nav a { text-decoration-color: #e730493b; text-underline-offset: 5px; }
+    main { padding: 46px 0 58px; }
+    .eyebrow { margin: 0 0 12px; color: #ff6479; font-size: 10px; letter-spacing: 3px; text-align: center; text-transform: uppercase; }
+    h1 { margin: 0; font: 500 clamp(34px, 7vw, 58px) Cinzel, Georgia, serif; letter-spacing: 1.2px; text-align: center; text-shadow: 0 0 26px #e9263d44; }
+    .subtitle { max-width: 620px; margin: 13px auto 25px; color: #c7b9bd; font-size: 15px; line-height: 1.7; text-align: center; }
+    .holo-stage { position: relative; isolation: isolate; display: grid; min-height: 330px; place-items: center; overflow: hidden; border: 1px solid #9622346e; border-radius: 5px; background: radial-gradient(ellipse at center, #171014 0, #070608 54%, #030304 100%); box-shadow: 0 20px 70px #000, inset 0 0 60px #e32a3b10; }
+    .holo-stage::before { position: absolute; z-index: 1; inset: 0; pointer-events: none; content: ""; opacity: .42; background: repeating-linear-gradient(0deg, transparent 0 3px, #b52b3916 4px, transparent 5px 8px); }
+    .holo-stage::after { position: absolute; z-index: 1; inset: 0; pointer-events: none; content: ""; background: linear-gradient(110deg, transparent 17%, #fb304508 49%, #73e4ff0a 53%, transparent 82%); }
+    .holo-emblem { position: absolute; z-index: 0; width: min(74vw, 600px); height: auto; opacity: .38; mix-blend-mode: screen; filter: drop-shadow(0 0 12px #f12645) drop-shadow(0 0 42px #df1d4380) drop-shadow(0 0 70px #43cfff30); animation: holo-spin 14s linear infinite; }
+    @keyframes holo-spin {
+      0% { transform: perspective(900px) rotateY(0deg) rotateZ(-4deg) scale(.86); opacity: .24; }
+      25% { opacity: .43; }
+      50% { transform: perspective(900px) rotateY(180deg) rotateZ(3deg) scale(1.02); opacity: .35; }
+      75% { opacity: .48; }
+      100% { transform: perspective(900px) rotateY(360deg) rotateZ(-4deg) scale(.86); opacity: .24; }
+    }
+    .launcher-shot { position: relative; z-index: 2; display: block; width: min(91%, 850px); margin: 25px 0; padding: 6px; border: 1px solid #ff596b94; border-radius: 4px; background: #060507; box-shadow: 0 0 26px #ed203d33, 0 12px 36px #000c; }
+    .launcher-shot img { display: block; width: 100%; height: auto; }
+    .caption { margin: 10px 0 0; color: #9e8d92; font-size: 10px; text-align: center; }
+    .download-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 24px 0 8px; }
+    .download { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 0 25px; border: 1px solid #ff7181; border-radius: 3px; background: linear-gradient(#d6223b, #781321); box-shadow: 0 0 22px #ed243c35; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1.15px; text-decoration: none; text-transform: uppercase; transition: filter .18s, box-shadow .18s; }
+    .download:hover { filter: brightness(1.2); box-shadow: 0 0 32px #ed243c66; }
+    .download.secondary { border-color: #605159; background: #101014; color: #dfd4d7; }
+    .version { margin: 10px 0 32px; color: #9e9094; font-size: 11px; text-align: center; }
+    .details { max-width: 760px; margin: 0 auto; padding: 24px; border: 1px solid #6e273347; background: linear-gradient(135deg, #100b0dcc, #070608e8); }
+    .details h2 { margin: 0 0 12px; font: 19px Cinzel, Georgia, serif; text-align: center; }
+    .details p { margin: 0; color: #c8b9bd; font-size: 13px; line-height: 1.8; text-align: center; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 19px auto 0; max-width: 760px; }
+    .feature { padding: 15px 12px; border-top: 1px solid #a42a3b88; background: #0c090b; text-align: center; }
+    .feature strong { display: block; margin-bottom: 6px; color: #f06b7b; font: 13px Cinzel, Georgia, serif; }
+    .feature span { color: #a99b9f; font-size: 11px; line-height: 1.5; }
+    .more { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 24px; margin: 21px 0 0; color: #d7c7cb; font-size: 11px; }
+    .more a { text-decoration-color: #bb3349; text-underline-offset: 4px; }
+    footer { padding: 20px 0 25px; color: #83777b; font-size: 10px; text-align: center; }
+    footer a { color: #c5b4b8; }
+    @media (max-width: 620px) { header { height: auto; min-height: 76px; gap: 14px; } nav { gap: 12px; font-size: 10px; } nav a:nth-child(2) { display: none; } main { padding-top: 34px; } .holo-stage { min-height: 230px; } .launcher-shot { width: 96%; padding: 3px; } .features { grid-template-columns: 1fr; } .feature { text-align: left; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="https://www.thesithempire.eu/" aria-label="The Sith Empire">
+        <img src="assets/crest.png" alt="">
+        <span>THE SITH EMPIRE<small>JEDI ACADEMY</small></span>
+      </a>
+      <nav aria-label="Page navigation"><a href="#download">Download</a><a href="#features">Features</a><a href="https://www.thesithempire.eu/">Empire</a></nav>
+    </header>
+    <main>
+      <p class="eyebrow">Jedi Academy launcher</p>
+      <h1>{{S}} Launcher</h1>
+      <p class="subtitle">Command your Jedi Academy setup. The Sith crest spins behind the launcher in a dark holographic display.</p>
+      <figure style="margin:0">
+        <div class="holo-stage" aria-label="Animated Sith hologram behind a launcher preview">
+          <img class="holo-emblem" src="assets/crest.png" alt="" aria-hidden="true">
+          <a class="launcher-shot" href="assets/launcher-preview.jpg" aria-label="Open launcher screenshot">
+            <img src="assets/launcher-preview.jpg" alt="The Sith Empire Launcher showing its game and Sith Cloud tabs">
+          </a>
+        </div>
+        <figcaption class="caption">A Sith hologram surrounds the launcher interface</figcaption>
+      </figure>
+      <div class="download-row" id="download">
+        <a class="download" href="downloads/SLauncher.exe" download>Download Windows Launcher</a>
+        <a class="download secondary" href="downloads/SLauncher-windows-x86_64-v0.1.3.zip" download>Windows ZIP</a>
+      </div>
+      <p class="version">Windows v0.1.3 · Linux v0.1.0 · 64-bit</p>
+      <section class="details" aria-labelledby="about-title">
+        <h2 id="about-title">One launcher. Your Jedi Academy setup.</h2>
+        <p>Keep JoF EternalJK current, verify selected PK3 files, manage Sith Cloud content, and start the Jedi Academy client you choose. The Windows launcher follows the official Sith Cloud address automatically.</p>
+      </section>
+      <section class="features" id="features" aria-label="Launcher features">
+        <div class="feature"><strong>Clients</strong><span>Install and launch supported Jedi Academy clients.</span></div>
+        <div class="feature"><strong>Cloud content</strong><span>Manage JoF and Sith PK3 files from separate collections.</span></div>
+        <div class="feature"><strong>Verification</strong><span>Check selected files against current manifest sizes and hashes.</span></div>
+      </section>
+      <nav class="more" aria-label="Additional downloads">
+        <a href="downloads/SLauncher-linux-x86_64.tar.gz" download>Linux x86_64 (v0.1.0)</a>
+        <a href="downloads/SHA256SUMS.txt" download>SHA-256 checksums</a>
+        <a href="LICENSE">License</a>
+      </nav>
+      <p class="caption">Jedi Academy and its original game files are not included.</p>
+    </main>
+    <footer><a href="https://www.thesithempire.eu/">The Sith Empire</a> · For the Empire. For the game.</footer>
+  </div>
+</body>
+</html>
