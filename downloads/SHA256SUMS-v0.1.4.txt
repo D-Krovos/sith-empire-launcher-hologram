@@ -1,0 +1,4 @@
+c078ba43f95681acc657583427bbb04db8d5e27329b1d98c6d77b5ff5ec43be7 *The {{S}} Launcher.exe
+fe7eafac9d0ba9859c3989a0620270ebc0060f1162384ae8332fbb4fc311d1a8 *The {{S}} Launcher
+f5ea6d4a77394fcd0a739850bfae85ae588e8445e29f556342fe55f91b74d2b7 *The {{S}} Launcher-windows-x86_64-0.1.4.zip
+06b63e801ed7a97215367adef1c1bfab368332cf8a32fa8597e79c7bd3aa9660 *The {{S}} Launcher-linux-x86_64-0.1.4.tar.gz

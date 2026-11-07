@@ -1,3 +1,4 @@
-8c2be26f23af53cc25fad72793eb0b9d19414b68ae751ef4182e00272215e84d  SLauncher.exe
-a3414057a719e049d5a0405cf95d959fea62a4a4b0cc568fe024f932a8baebca  SLauncher-windows-x86_64-v0.1.3.zip
-67121c0a6f0f7b37e24766e0f86d469d8c4a11b806b52b1b0b8f25024ba36b89  SLauncher-linux-x86_64.tar.gz
+c078ba43f95681acc657583427bbb04db8d5e27329b1d98c6d77b5ff5ec43be7 *The {{S}} Launcher.exe
+fe7eafac9d0ba9859c3989a0620270ebc0060f1162384ae8332fbb4fc311d1a8 *The {{S}} Launcher
+f5ea6d4a77394fcd0a739850bfae85ae588e8445e29f556342fe55f91b74d2b7 *The {{S}} Launcher-windows-x86_64-0.1.4.zip
+06b63e801ed7a97215367adef1c1bfab368332cf8a32fa8597e79c7bd3aa9660 *The {{S}} Launcher-linux-x86_64-0.1.4.tar.gz
