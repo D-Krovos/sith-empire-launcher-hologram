@@ -1,14 +1,14 @@
 {
-    "version":  "0.1.4",
-    "windows":  {
-                    "url":  "https://d-krovos.github.io/sith-empire-launcher-hologram/downloads/The-Sith-Empire-Launcher.exe",
-                    "sha256":  "c078ba43f95681acc657583427bbb04db8d5e27329b1d98c6d77b5ff5ec43be7",
-                    "size":  15591936
-                },
-    "linux":  {
-                  "url":  "https://d-krovos.github.io/sith-empire-launcher-hologram/downloads/The-Sith-Empire-Launcher",
-                  "sha256":  "fe7eafac9d0ba9859c3989a0620270ebc0060f1162384ae8332fbb4fc311d1a8",
-                  "size":  20916480
-              },
-    "published_at":  "2026-11-07T17:39:37Z"
+  "version": "0.1.5",
+  "published_at": "2026-11-07T18:34:50Z",
+  "windows": {
+    "url": "https://d-krovos.github.io/sith-empire-launcher-hologram/downloads/The-Sith-Empire-Launcher.exe",
+    "sha256": "357988f476905b11ba15a24b23e82de5ac3edf5ff9d9a7d084bbd2f019c69c16",
+    "size": 15595520
+  },
+  "linux": {
+    "url": "https://d-krovos.github.io/sith-empire-launcher-hologram/downloads/The-Sith-Empire-Launcher",
+    "sha256": "d89894bb9df8aa96f4a3584eba14259d8420ab47fa0c219edaffbfe572466e77",
+    "size": 20928128
+  }
 }
