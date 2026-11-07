@@ -44,7 +44,7 @@
     .download { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 0 25px; border: 1px solid #ff7181; border-radius: 3px; background: linear-gradient(#d6223b, #781321); box-shadow: 0 0 22px #ed243c35; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1.15px; text-decoration: none; text-transform: uppercase; transition: filter .18s, box-shadow .18s; }
     .download:hover { filter: brightness(1.2); box-shadow: 0 0 32px #ed243c66; }
     .download.secondary { border-color: #605159; background: #101014; color: #dfd4d7; }
-    .version { margin: 10px 0 32px; color: #9e9094; font-size: 11px; text-align: center; }
+    .version { margin: 10px 0 32px; color: #9e9094; font-size: 11px; line-height: 1.8; text-align: center; }
     .details { max-width: 760px; margin: 0 auto; padding: 24px; border: 1px solid #6e273347; background: linear-gradient(135deg, #100b0d99, #07060899); }
     .details h2 { margin: 0 0 12px; font: 19px Cinzel, Georgia, serif; text-align: center; }
     .details p { margin: 0; color: #c8b9bd; font-size: 13px; line-height: 1.8; text-align: center; }
@@ -85,7 +85,7 @@
       <div class="download-row" id="download">
         <a class="download" href="downloads/The-Sith-Empire-Launcher.exe" download="The {{S}} Launcher.exe">Direct Download</a>
       </div>
-      <p class="version">Current release v0.1.4 (64-bit)</p>
+      <p class="version"><span id="release-version">Current release v0.1.4 (64-bit)</span><br>Updated <time id="release-date">Loading…</time></p>
       <section class="details" aria-labelledby="about-title">
         <h2 id="about-title">One launcher. Your Jedi Academy setup.</h2>
         <p>Keep JoF EternalJK current, verify selected PK3 files, manage Sith Cloud content, and start the Jedi Academy client you choose. The launcher follows the official Sith Cloud address automatically.</p>
@@ -102,5 +102,28 @@
     </main>
     <footer><a href="https://www.thesithempire.eu/">The Sith Empire</a> · For the Empire. For the game.</footer>
   </div>
+  <script>
+    fetch('updates/latest.json', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error('Release information unavailable');
+        return response.json();
+      })
+      .then(release => {
+        if (release.version) {
+          document.getElementById('release-version').textContent = 'Current release v' + release.version + ' (64-bit)';
+        }
+        const updated = document.getElementById('release-date');
+        const publishedAt = new Date(release.published_at);
+        if (!Number.isNaN(publishedAt.getTime())) {
+          updated.dateTime = publishedAt.toISOString();
+          updated.textContent = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(publishedAt);
+        } else {
+          updated.textContent = 'date unavailable';
+        }
+      })
+      .catch(() => {
+        document.getElementById('release-date').textContent = 'date unavailable';
+      });
+  </script>
 </body>
 </html>
